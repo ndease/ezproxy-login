@@ -29,6 +29,20 @@
     border: 1px solid lightgray;
     max-width:500px;
 }
+.pratt-btn{
+	background-color:#FFB900;
+	margin:1rem;
+	padding: 1.25rem;
+	border-radius:5px;
+	color:black !important;
+display:block;
+	text-align:center;
+        transition-duration: 0.2s;}
+.pratt-btn:hover{
+    background-color:#0090D0 !important;
+    color:white !important;
+text-decoration:none;
+        }
 </style>
 <body>
 <!--
@@ -117,9 +131,14 @@ for information on user authentication options.
   <div class="form-group">
     <label for="formGroupExampleInput2">Password</label>
     <input type="password" name="pass" class="form-control">
+    <!-- <a href="https://onekey.pratt.edu/t_pwRequest.php" target="_blank">Reset Password<a> -->
   </div>
 <input class="btn btn-primary" type="submit" value="Login" />
 </form>
+<hr style="background-color:lightgray;">
+<h5 style="color:gray;text-align:center !important;">OR</h5>
+<a class="h5 pratt-btn header-link" href="/login?auth=shibboleth&url=^U"><i class="fas fa-key"></i>&nbsp;&nbsp;Login with Pratt OneKey(SSO)</a>
+
 </div>
 </div>
 <hr>
