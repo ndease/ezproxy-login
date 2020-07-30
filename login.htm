@@ -18,7 +18,7 @@
 </head>
 <style>
 .loginform{
-  background-color: #E4E5E6;
+    background-color:rgb(232, 232, 232);
     border-radius: 8px;
     font-size: .9em;
     padding: 40px;
@@ -110,35 +110,94 @@ for information on user authentication options.
      </div>
 
     <!-- LibAnswers -->
-    <div id="libchat_75fe460f54c6ce530c63c1ef0fffd96a"></div>
-    <script src="https://v2.libanswers.com/load_chat.php?hash=75fe460f54c6ce530c63c1ef0fffd96a"></script>
-    <!-- mobile LibAnswers-->
-    <div id="libchat_49839a745942e169dc223b63c10dc296"></div>
-    <script src="https://v2.libanswers.com/load_chat.php?hash=49839a745942e169dc223b63c10dc296"></script>
+    <script src="https://v2.libanswers.com/load_chat.php?hash=248d44acc475518cecee5bcf4eccb105"></script>
+    <div id="libchat_248d44acc475518cecee5bcf4eccb105"></div>
+    <style>
+    .libchat_online{
+      transform: rotate(90deg) !important;
+      -webkit-transform-origin: top left;
+    -ms-transform-origin: top left;
+    transform-origin: top left;
+      width: 160px;
+      height: 43px;
+      display: block;
+      position:fixed;
+      text-align: center;
+      box-sizing: border-box;
+      top: 45%;
+      left:100%;
+      font-size:16px;
+      right:0;
+      transform: translateY(-50%);
+      border-radius:0px 0px 10px 10px !important;
+      z-index:1000 !important;
+      color: rgb(0, 0, 0) !important;
+      background-color: rgb(255, 185, 0) !important;
+      box-shadow: rgb(204, 204, 204) 0px 0px 5px;
+      border-width: 0px 4px 4px;
+    }
+     .libchat_offline{
+      transform: rotate(90deg) !important;
+      -webkit-transform-origin: top left;
+    -ms-transform-origin: top left;
+    transform-origin: top left;
+      position: fixed;
+      width: 160px;
+      height: 43px;
+      text-align: center;
+      top: 45%;
+      font-size:16px;
+      left:100% !important;
+      right:0;
+      transform: translateY(-50%);
+      border-radius:0px 0px 10px 10px !important;
+      color:black !important;
+      z-index:1000 !important;
+      background-color: rgb(255, 185, 0) !important;
+      box-shadow: rgb(204, 204, 204) 0px 0px 5px; border-width: 0px 4px 4px;
+    }
+    </style>
 </header>
 <main id="main">
 <div class="container" style="margin-top:35px;">
-<h1 class="lib-heading">OneKey Sign In</h1>
+<h1 class="lib-heading">Please Sign in</h1>
 <hr>
 <div class="container">
-<div class="loginform">
-<form action="/login" method="post">
-  <input type="hidden" name="url" value="^U" />
-  <div class="form-group">
-    <label for="formGroupExampleInput">Username</label>
-    <input type="text" name="user" class="form-control">
-  </div>
-  <div class="form-group">
-    <label for="formGroupExampleInput2">Password</label>
-    <input type="password" name="pass" class="form-control">
-    <!-- <a href="https://onekey.pratt.edu/t_pwRequest.php" target="_blank">Reset Password<a> -->
-  </div>
-<input class="btn btn-primary" type="submit" value="Login" />
-</form>
-<hr style="background-color:lightgray;">
-<h5 style="color:gray;text-align:center !important;">OR</h5>
-<a class="h5 pratt-btn header-link" href="/login?auth=shibboleth&url=^U"><i class="fas fa-key"></i>&nbsp;&nbsp;Login via SSO</a>
+<div class="loginform" style="background-color: white;">
+  <a class="h5 pratt-btn header-link" href="/login?auth=shibboleth&url=^U"><i class="fas fa-key"></i>&nbsp;&nbsp;Sign in with Pratt OneKey (SSO)</a>
+  <hr style="background-color:lightgray;">
+  <div class="accordion" id="accordionExample">
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-center collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          <i class="fa" aria-hidden="true"></i>
+              &nbsp;&nbsp;Sign in with Guest Account
+        </button>
+      </h2>
+    </div>
 
+    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+      <div class="card-body">
+        <form action="/login" method="post">
+          <input type="hidden" name="url" value="^U" />
+          <div class="form-group">
+            <label for="formGroupExampleInput">Username</label>
+            <input type="text" name="user" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="formGroupExampleInput2">Password</label>
+            <input type="password" name="pass" class="form-control">
+            <!-- <a href="https://onekey.pratt.edu/t_pwRequest.php" target="_blank">Reset Password<a> -->
+          </div>
+        <input class="btn btn-primary" type="submit" value="Login" />
+        </form>
+        <p>Guest accounts are only for visiting researchers and Pratt MWP Faculty. If you are a Pratt Student, Faculty, or Staff member, please <a href="/login?auth=shibboleth&url=^U">sign in with your OneKey</a></p>
+
+      </div>
+    </div>
+  </div>
+</div>
 </div>
 </div>
 <hr>
